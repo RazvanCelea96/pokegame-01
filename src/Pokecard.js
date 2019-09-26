@@ -1,70 +1,35 @@
-const Pokecard = [
-  {
-    id: "003",
-    name: "Venusar",
-    faction: "Grass",
-    power: 200
-  },
-  {
-    id: "025",
-    name: "Pikachu",
-    faction: "Electric",
-    power: 150
-  },
-  {
-    id: "197",
-    name: "Umbreon",
-    faction: "Dark",
-    power: 190
-  },
-  {
-    id: "392",
-    name: "Infernape",
-    faction: "Fire",
-    power: 200
-  },
-  {
-    id: "006",
-    name: "Charizard",
-    faction: "Fire",
-    power: 250
-  },
-  {
-    id: "149",
-    name: "Dragonite",
-    faction: "Dragon",
-    power: 250
-  },
-  {
-    id: "052",
-    name: "Meowth",
-    faction: "Normal",
-    power: 50
-  },
-  {
-    id: "094",
-    name: "Gengar",
-    faction: "Ghost",
-    power: 190
-  },
-  {
-    id: "059",
-    name: "Arcanine",
-    faction: "Fire",
-    power: 170
-  },
-  {
-    id: "007",
-    name: "Squirtle",
-    faction: "Water",
-    power: 70
-  },
-  {
-    id: "130",
-    name: "Gyrados",
-    faction: "Water",
-    power: 220
+import React from "react";
+import "./Pokecard.css";
+const linkoo = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
+
+
+
+    let imgSize= {
+    // margin: '20px',
+    width: '150px',
+    height: '150px'
+    }
+
+class Pokecard extends React.Component {
+  render() {
+    const { id, name, type, power } = this.props;
+    // const randomPokemon = Pokecard[Math.floor(Math.random() * Pokecard.length)];
+
+    let imgSource = `${linkoo}${id}.png`;
+
+    return (
+      <div className="Pokecard">
+        <h1>{name}</h1>
+        <img src={imgSource} style={imgSize}/>
+        <div>Type:{type}</div>
+        <div>Power:{power}</div>
+      </div>
+    );
   }
-];
+}
 
 export default Pokecard;
+
+
+
+
