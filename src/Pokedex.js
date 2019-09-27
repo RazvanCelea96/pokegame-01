@@ -1,5 +1,6 @@
 import React from "react";
 import Pokecard from "./Pokecard";
+import AnswerField from "./AnswerField";
 
 class Pokedex extends React.Component {
   static defaultProps = {
@@ -75,25 +76,14 @@ class Pokedex extends React.Component {
     ]
   };
   render() {
-
-   
     return (
       <div className="Pokedex">
-        {/* {this.props.pokemonList.map(p => (
-          <Pokecard id={p.id} name={p.name} type={p.type} power={p.power}  */}
-
-              {this.randomPokemon= this.props.pokemonList.map(p => (
-          <Pokecard id={p.id} name={p.name} type={p.type} power={p.power} 
-               
-                 
-
-        //   />
-        // ))}   
-
-          />
-        ))}
-        {/* {this.randomPokemon = this.props.pokemonList[Math.floor(Math.random() * this.props.pokemonList.length)]} */}
-
+        {
+          (this.randomPokemon = this.props.pokemonList.map(p => (
+            <Pokecard id={p.id} name={p.name} type={p.type} power={p.power} />
+          ))[Math.floor(Math.random() * this.props.pokemonList.length)])
+        }
+        <AnswerField answerField={this.addAnswer} />
       </div>
     );
   }
