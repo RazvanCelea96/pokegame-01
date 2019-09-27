@@ -20,8 +20,8 @@ class Pokecard extends React.Component {
       <div className="Pokecard">
         <h1 className="name">{name }</h1>
         <img src={imgSource} style={imgSize} />
-        <div>Type:{type}</div>
-        <div>Power:{power}</div>
+        <div>Type : {type}</div>
+        <div>Power : {power}</div>
       </div>
     );
   }
