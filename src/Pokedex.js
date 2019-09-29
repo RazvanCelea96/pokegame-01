@@ -80,10 +80,10 @@ class Pokedex extends React.Component {
       <div className="Pokedex">
         {
           (this.randomPokemon = this.props.pokemonList.map(p => (
-            <Pokecard id={p.id} name={p.name} type={p.type} power={p.power} />
+            <Pokecard id={p.id} /*name={p.name}*/ type={p.type} power={p.power} />
           ))[Math.floor(Math.random() * this.props.pokemonList.length)])
         }
-        <AnswerField answerField={this.addAnswer} />
+        <AnswerField />
       </div>
     );
   }

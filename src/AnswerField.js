@@ -1,33 +1,39 @@
-import React from 'react';
+import React from "react";
 
 class AnswerField extends React.Component {
-  constructor(props)
-  {
+  constructor(props) {
     super(props);
-    this.state= {value: ''};
+    this.state = { value: "" };
   }
-    answerInput = React.createRef();
   
-    handleSubmit = e => {
-    //   e.preventDefault();
-    //   this.props.addAnswer(this.answerInput.current.value);
-    //   e.currentTarget.reset();
-   };
-  
-    render() {
-      return (
-        <form className="form" onSubmit={this.handleSubmit} >
-          <input 
-            type="text"
 
-            ref={this.answerInput}
-            placeholder="Who's that Pokemon!?"
-          />
-  
-          <input type="submit" value="Answer" />
-        </form>
-      );
-    }
+  handleValueChange = event => {
+    this.setState({ value: event.target.value });
+   
+  };
+
+
+  handleSubmit = event => {
+    const {value} = this.state;
+    alert(`Your answer is ${value}`);
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} >
+        <div className="form-grup"></div>
+        <input
+          type="text"
+          value={this.state.value} onChange={this.handleValueChange.bind(this)}
+placeholder="Who's that Pokemon!?"
+        />
+
+        <input type="submit" value="Submit" />
+      </form>
+    
+
+    );
   }
-  
-  export default AnswerField;
+}
+
+export default AnswerField;
