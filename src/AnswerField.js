@@ -1,18 +1,37 @@
 import React from "react";
-
 class AnswerField extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = {
+      value: "",
+      name: [
+        "ARCANINE",
+        "VENUSAR",
+        "GENGAR",
+        "PIKACHU",
+        "UMBREON",
+        "INFERNAPE",
+        "CHARIZARD",
+        "DRAGONITE",
+        "SQUIRTLE",
+        "GYRADOS",
+        "MEOWTH"
+      ]
+    };
   }
 
   handleValueChange = event => {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value.toUpperCase() });
   };
 
   handleSubmit = event => {
-    const { value } = this.state;
-    alert(`Your answer is ${value}`);
+    const { value, name } = this.state;
+
+    if (name.indexOf(value) > -1) {
+      alert("You are right!");
+    } else {
+      alert("Bummer! Not the right Pokemon");
+    }
   };
 
   render() {

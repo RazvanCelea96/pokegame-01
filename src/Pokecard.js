@@ -10,13 +10,16 @@ let imgSize = {
 
 class Pokecard extends React.Component {
   render() {
-    const { id, name, type, power } = this.props;
+    const { id, type, power } = this.props;
     let imgSource = `${linkoo}${id}.png`;
 
     return (
       <div className="Pokecard">
         {/* <h1 className="name">{name }</h1> */}
-       <h1> <img src={imgSource} style={imgSize} /> </h1>
+        <h1>
+          {" "}
+          <img src={imgSource} style={imgSize} alt="description" />{" "}
+        </h1>
         <div>Type : {type}</div>
         <div>Power : {power}</div>
       </div>
