@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Particles from "react-particles-js";
-import Pokedex from "./Pokedex";
+import Pokelist from "./Pokelist";
 
 const ParticleOptions = {
   particles: {
@@ -19,7 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Pokedex />
+        <Pokelist />
         <Particles className="particles" params={ParticleOptions} />
       </div>
     );

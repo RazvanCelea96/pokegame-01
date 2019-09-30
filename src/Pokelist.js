@@ -2,7 +2,7 @@ import React from "react";
 import Pokecard from "./Pokecard";
 import AnswerField from "./AnswerField";
 
-class Pokedex extends React.Component {
+class Pokelist extends React.Component {
   static defaultProps = {
     pokemonList: [
       {
@@ -76,11 +76,13 @@ class Pokedex extends React.Component {
     ]
   };
   render() {
+    // let ${valoare} = this.state.value;
+    // const {Nume} = this.props.name;
     return (
       <div className="Pokedex">
         {
           (this.randomPokemon = this.props.pokemonList.map(p => (
-            <Pokecard id={p.id} /*name={p.name}*/ type={p.type} power={p.power} />
+            <Pokecard id={p.id} name={p.name} type={p.type} power={p.power} />
           ))[Math.floor(Math.random() * this.props.pokemonList.length)])
         }
         <AnswerField />
@@ -88,4 +90,4 @@ class Pokedex extends React.Component {
     );
   }
 }
-export default Pokedex;
+export default Pokelist;

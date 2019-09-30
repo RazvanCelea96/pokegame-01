@@ -10,16 +10,13 @@ let imgSize = {
 
 class Pokecard extends React.Component {
   render() {
-    // prompt("Who's that Pokemon!?");
     const { id, name, type, power } = this.props;
-    // const randomPokemon = Pokecard[Math.floor(Math.random() * Pokecard.length)];
-
     let imgSource = `${linkoo}${id}.png`;
 
     return (
       <div className="Pokecard">
-        <h1 className="name">{name }</h1>
-        <img src={imgSource} style={imgSize} />
+        {/* <h1 className="name">{name }</h1> */}
+       <h1> <img src={imgSource} style={imgSize} /> </h1>
         <div>Type : {type}</div>
         <div>Power : {power}</div>
       </div>
